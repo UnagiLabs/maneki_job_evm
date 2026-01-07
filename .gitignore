@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Turbo
+.turbo/
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# Debug logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+.claude/
