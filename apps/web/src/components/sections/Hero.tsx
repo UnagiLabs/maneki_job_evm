@@ -4,12 +4,12 @@ import { SearchBox } from "@/components/common/SearchBox";
 
 export function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary/5 via-background to-background py-16 md:py-24 lg:py-32">
+    <section className="relative bg-gradient-to-br from-orange-50 via-white to-white py-16 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-6">
           あなたの「得意」を
           <br />
-          <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
             世界に届けよう
           </span>
         </h1>

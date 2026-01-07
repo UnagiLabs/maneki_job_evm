@@ -23,7 +23,7 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="py-12 md:py-16 bg-primary text-primary-foreground">
+    <section className="py-12 md:py-16 bg-gradient-to-r from-orange-50 to-amber-50">
       <div className="container mx-auto px-4">
         <h2 className="text-xl md:text-2xl font-bold text-center mb-8 md:mb-12">
           Maneki job が選ばれる理由
@@ -31,13 +31,13 @@ export function Benefits() {
         <div className="grid md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <div key={index} className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-foreground/10 mb-4">
-                <benefit.icon className="h-8 w-8" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 mb-4">
+                <benefit.icon className="h-8 w-8 text-orange-600" />
               </div>
               <h3 className="text-lg md:text-xl font-semibold mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-primary-foreground/80 text-sm md:text-base leading-relaxed">
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                 {benefit.description}
               </p>
             </div>
