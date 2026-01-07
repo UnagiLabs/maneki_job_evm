@@ -11,8 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { session, mockUser } from "@/lib/session";
 import { Fingerprint, Loader2, Shield, CheckCircle } from "lucide-react";
 
@@ -36,16 +34,6 @@ export default function AuthPage() {
         router.push("/");
       }, 800);
     }, 1500);
-  };
-
-  const handleMockAuth = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      session.setUser(mockUser);
-      toast.success("ログインしました！");
-      router.push("/");
-    }, 1000);
   };
 
   return (
@@ -100,82 +88,6 @@ export default function AuthPage() {
               </div>
             </div>
           </div>
-
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">
-                または
-              </span>
-            </div>
-          </div>
-
-          {/* テスト用ログイン */}
-          <Tabs defaultValue="login">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="login">ログイン</TabsTrigger>
-              <TabsTrigger value="register">新規登録</TabsTrigger>
-            </TabsList>
-            <TabsContent value="login" className="space-y-4 mt-4">
-              <form onSubmit={handleMockAuth} className="space-y-4">
-                <Input
-                  type="email"
-                  placeholder="メールアドレス"
-                  defaultValue="test@example.com"
-                />
-                <Input
-                  type="password"
-                  placeholder="パスワード"
-                  defaultValue="password123"
-                />
-                <Button
-                  type="submit"
-                  className="w-full"
-                  variant="outline"
-                  disabled={loading}
-                >
-                  {loading ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : null}
-                  ログイン (デモ)
-                </Button>
-              </form>
-            </TabsContent>
-            <TabsContent value="register" className="space-y-4 mt-4">
-              <form onSubmit={handleMockAuth} className="space-y-4">
-                <Input placeholder="ユーザー名" defaultValue="テストユーザー" />
-                <Input
-                  type="email"
-                  placeholder="メールアドレス"
-                  defaultValue="test@example.com"
-                />
-                <Input
-                  type="password"
-                  placeholder="パスワード"
-                  defaultValue="password123"
-                />
-                <Button
-                  type="submit"
-                  className="w-full"
-                  variant="outline"
-                  disabled={loading}
-                >
-                  {loading ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : null}
-                  登録 (デモ)
-                </Button>
-              </form>
-            </TabsContent>
-          </Tabs>
-
-          <p className="text-xs text-center text-muted-foreground">
-            ※ ハッカソンデモ用のモック認証です。
-            <br />
-            実際のWorld ID連携は後日実装予定です。
-          </p>
         </CardContent>
       </Card>
     </div>
